@@ -1,0 +1,84 @@
+{
+  "_id": "688335573a60c3be4c51f128",
+  "id": "krohnedigital/FuelCast",
+  "author": "krohnedigital",
+  "sha": "eb6a6ec011c1c9a2cbce21459e22be4c77ef84dd",
+  "lastModified": "2026-08-24T12:58:15Z",
+  "private": false,
+  "gated": false,
+  "disabled": false,
+  "tags": [
+    "task_categories:tabular-regression",
+    "task_categories:time-series-forecasting",
+    "license:cc-by-nc-nd-4.0",
+    "size_categories:100K<n<1M",
+    "format:parquet",
+    "modality:tabular",
+    "modality:text",
+    "modality:timeseries",
+    "library:datasets",
+    "library:pandas",
+    "library:polars",
+    "library:mlcroissant",
+    "arxiv:2510.08217",
+    "region:us",
+    "timeseries",
+    "tabular",
+    "Time Series Regression",
+    "Marine",
+    "Ship",
+    "Fuel Consumption"
+  ],
+  "description": "\n\t\n\t\t\n\t\n\t\n\t\tDataset for the FuelCast Benchmark - Benchmarking Tabular and Temporal Models for Ship Fuel Consumption\n\t\n\nThe related paper is available on Springer Nature Link: https://link.springer.com/chapter/10.1007/978-3-032-15535-1_4\nThe preprint is available on ArXiv: https://arxiv.org/abs/2510.08217\n\n\t\n\t\t\n\t\n\t\n\t\tDataset\n\t\n\nThe dataset was created using three main sources:\n\nHigh frequency auto logger data of important parameters from the ship, recorded by the KROHNE EcoMATE™ system.… See the full description on the dataset page: https://huggingface.co/datasets/krohnedigital/FuelCast.",
+  "downloads": 341,
+  "likes": 5,
+  "cardData": {
+    "license": "cc-by-nc-nd-4.0",
+    "configs": [
+      {
+        "config_name": "cps_poseidon",
+        "data_files": "CPS_Poseidon.parquet"
+      },
+      {
+        "config_name": "cps_triton",
+        "data_files": "CPS_Triton.parquet"
+      },
+      {
+        "config_name": "oss_ceto",
+        "data_files": "OSS_Ceto.parquet"
+      }
+    ],
+    "tags": [
+      "timeseries",
+      "tabular",
+      "Time Series Regression",
+      "Marine",
+      "Ship",
+      "Fuel Consumption"
+    ],
+    "pretty_name": "FuelCast",
+    "task_categories": [
+      "tabular-regression",
+      "time-series-forecasting"
+    ]
+  },
+  "siblings": [
+    {
+      "rfilename": ".gitattributes"
+    },
+    {
+      "rfilename": "CPS_Poseidon.parquet"
+    },
+    {
+      "rfilename": "CPS_Triton.parquet"
+    },
+    {
+      "rfilename": "OSS_Ceto.parquet"
+    },
+    {
+      "rfilename": "README.md"
+    }
+  ],
+  "createdAt": "2025-07-25T07:42:15Z",
+  "usedStorage": 17494400
+}

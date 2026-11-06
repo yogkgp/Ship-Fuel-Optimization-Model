@@ -1,0 +1,5 @@
+# Conclusion
+
+The completed prototype demonstrates that real ship data from three different vessels can support future-period fuel-flow prediction on a consumer laptop. Environmental XGBoost was selected for CPS Triton and OSS Ceto, while the fixed validation split selected a cubic model for CPS Poseidon. Across three additional future windows, environmental XGBoost achieved the lowest mean MAE for all vessels, but uncertainty across time was materially higher for Poseidon and Ceto. A transparent vessel-specific speed-grid module combines predicted rate with voyage duration and handles unsupported or time-infeasible candidates.
+
+The evidence supports vessel-specific predictive decision assistance. It does not demonstrate causal fuel savings or transfer to an unseen vessel. Temporal instability, inconsistent water-speed availability, the total-consumer target, interpolated weather and missing voyage/load context are central limitations. Future work should use voyage labels, separate propulsion and hotel loads, use reliable STW and draft, test leave-one-vessel-out transfer, propagate forecast uncertainty and compare recommendations with measured operations.

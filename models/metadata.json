@@ -1,0 +1,124 @@
+{
+  "vessel": "CPS_Triton",
+  "selected_model": "XGBoost | environment",
+  "selection_rule": "Lowest validation MAE, frozen before test evaluation; no refit",
+  "features": [
+    "Ship_SpeedOverGround",
+    "Weather_WindSpeed10M",
+    "Weather_WaveHeight",
+    "Weather_WavePeriod",
+    "Weather_OceanCurrentVelocity",
+    "Environment_SeaFloorDepth",
+    "Weather_Temperature2M",
+    "Weather_WindDirection10M_sin",
+    "Weather_WindDirection10M_cos",
+    "Weather_WaveDirection_sin",
+    "Weather_WaveDirection_cos",
+    "Weather_OceanCurrentDirection_sin",
+    "Weather_OceanCurrentDirection_cos"
+  ],
+  "feature_units": {
+    "Ship_SpeedOverGround": "m/s",
+    "Consumer_Total_MomentaryFuel": "kg/s",
+    "index": "5-minute sample index",
+    "Weather_WindSpeed10M": "m/s",
+    "Weather_WaveHeight": "m",
+    "Weather_WavePeriod": "s",
+    "Weather_OceanCurrentVelocity": "m/s",
+    "Environment_SeaFloorDepth": "m",
+    "Weather_Temperature2M": "deg C",
+    "Ship_Bearing": "degrees",
+    "Weather_WindDirection10M": "degrees",
+    "Weather_WaveDirection": "degrees",
+    "Weather_OceanCurrentDirection": "degrees"
+  },
+  "engineered_angle_units": "dimensionless sine/cosine of source direction minus bearing",
+  "target": "Consumer_Total_MomentaryFuel",
+  "target_units": "kg/s",
+  "config": {
+    "vessel": "CPS_Triton",
+    "seed": 42,
+    "train_fraction": 0.6,
+    "validation_end": 0.8,
+    "gap_samples": 288,
+    "minimum_comparison_speed_ms": 2.0,
+    "speed_grid_points": 151,
+    "rf_trees": 120,
+    "rf_min_leaf": 12,
+    "rf_max_depth": 16,
+    "xgb_trees": 240,
+    "xgb_max_depth": 4,
+    "xgb_learning_rate": 0.04,
+    "threads": 2
+  },
+  "source_sha256": "327581b0d35c756db207e6992a1d78f6f7e4f68dcfd299c77188912fdbd6aab8",
+  "python": "3.12.10",
+  "software": {
+    "numpy": "2.5.4",
+    "pandas": "3.1.0",
+    "scikit-learn": "1.9.1",
+    "xgboost": "3.4.1",
+    "pyarrow": "25.0.1",
+    "streamlit": "1.66.1"
+  },
+  "training_ranges": {
+    "Ship_SpeedOverGround": [
+      0.0,
+      8.96161448
+    ],
+    "Weather_WindSpeed10M": [
+      0.1,
+      22.0
+    ],
+    "Weather_WaveHeight": [
+      0.02,
+      5.7
+    ],
+    "Weather_WavePeriod": [
+      1.55,
+      14.55
+    ],
+    "Weather_OceanCurrentVelocity": [
+      0.0,
+      0.9
+    ],
+    "Environment_SeaFloorDepth": [
+      4.99901803518395,
+      342.8418373860763
+    ],
+    "Weather_Temperature2M": [
+      -12.6,
+      12.9
+    ],
+    "Weather_WindDirection10M_sin": [
+      -0.9999999617337401,
+      0.9999999999731835
+    ],
+    "Weather_WindDirection10M_cos": [
+      -0.9999999754578784,
+      0.9999995355839223
+    ],
+    "Weather_WaveDirection_sin": [
+      -1.0,
+      0.9999997219940395
+    ],
+    "Weather_WaveDirection_cos": [
+      -0.9999999999153979,
+      0.9999999981573126
+    ],
+    "Weather_OceanCurrentDirection_sin": [
+      -1.0,
+      1.0
+    ],
+    "Weather_OceanCurrentDirection_cos": [
+      -1.0,
+      1.0
+    ]
+  },
+  "speed_bounds_ms": [
+    2.0,
+    8.189948480000002
+  ],
+  "validation_absolute_error_p90_kg_s": 0.038808609114752896,
+  "test_fraction_inside_empirical_error_band": 0.8972183862694811
+}

@@ -1,0 +1,10 @@
+.venv/
+__pycache__/
+.pytest_cache/
+*.egg-info/
+data/raw/*.parquet
+data/interim/*.parquet
+data/processed/*.parquet
+models/*.joblib
+*.log
+.streamlit/secrets.toml

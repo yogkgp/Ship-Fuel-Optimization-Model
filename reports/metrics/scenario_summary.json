@@ -1,0 +1,77 @@
+[
+  {
+    "scenario": "Lower waves",
+    "source_index": 410.0,
+    "wave_m": 0.4066666666666667,
+    "wind_ms": 8.4,
+    "selected": {
+      "speed_ms": 7.57261568,
+      "speed_kn": 14.719987282937364,
+      "rate_kg_s": 0.20506349205970764,
+      "hours": 6.7934841299703255,
+      "fuel_kg": 5015.144084198111,
+      "supported": true,
+      "feasible": true
+    },
+    "best": {
+      "speed_ms": 6.044099673600001,
+      "speed_kn": 11.748789862289417,
+      "rate_kg_s": 0.16303686797618866,
+      "hours": 8.511514902566619,
+      "fuel_kg": 4995.686633209618,
+      "supported": true,
+      "feasible": true
+    },
+    "savings_percent": 0.38797391783419544
+  },
+  {
+    "scenario": "Median waves",
+    "source_index": 1846.0,
+    "wave_m": 0.9166666666666666,
+    "wind_ms": 10.483333333333334,
+    "selected": {
+      "speed_ms": 4.28017408,
+      "speed_kn": 8.319992812095032,
+      "rate_kg_s": 0.1714925467967987,
+      "hours": 12.01924115302442,
+      "fuel_kg": 7420.356993229378,
+      "supported": true,
+      "feasible": true
+    },
+    "best": {
+      "speed_ms": 7.4058883392000014,
+      "speed_kn": 14.39589525978402,
+      "rate_kg_s": 0.21587544679641724,
+      "hours": 6.946424532509435,
+      "fuel_kg": 5398.424998535045,
+      "supported": true,
+      "feasible": true
+    },
+    "savings_percent": 27.24844635560286
+  },
+  {
+    "scenario": "Higher waves",
+    "source_index": 899.0,
+    "wave_m": 1.6866666666666668,
+    "wind_ms": 9.966666666666665,
+    "selected": {
+      "speed_ms": 7.685793360000001,
+      "speed_kn": 14.93998709287257,
+      "rate_kg_s": 0.21821559965610504,
+      "hours": 6.6934462110550985,
+      "fuel_kg": 5258.211763360581,
+      "supported": true,
+      "feasible": true
+    },
+    "best": {
+      "speed_ms": 7.488420985600001,
+      "speed_kn": 14.556325889935206,
+      "rate_kg_s": 0.20734097063541412,
+      "hours": 6.869865428689239,
+      "fuel_kg": 5127.856438028768,
+      "supported": true,
+      "feasible": true
+    },
+    "savings_percent": 2.4790809347035823
+  }
+]

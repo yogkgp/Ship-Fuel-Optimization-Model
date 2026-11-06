@@ -1,0 +1,100 @@
+{
+  "vessel": "OSS_Ceto",
+  "source_file": "OSS_Ceto.parquet",
+  "source_sha256": "a81eefff2bb6bedbb85455e4fb408906a1de5356f0633fda450d7e794410b7ef",
+  "source_rows": 43213,
+  "retained_rows": 43197,
+  "selected_model": "XGBoost | environment",
+  "features": [
+    "Ship_SpeedOverGround",
+    "Weather_WindSpeed10M",
+    "Weather_WaveHeight",
+    "Weather_WavePeriod",
+    "Weather_OceanCurrentVelocity",
+    "Environment_SeaFloorDepth",
+    "Weather_Temperature2M",
+    "Weather_WindDirection10M_sin",
+    "Weather_WindDirection10M_cos",
+    "Weather_WaveDirection_sin",
+    "Weather_WaveDirection_cos",
+    "Weather_OceanCurrentDirection_sin",
+    "Weather_OceanCurrentDirection_cos"
+  ],
+  "speed_bounds_ms": [
+    2.0,
+    6.080733367328996
+  ],
+  "training_ranges": {
+    "Ship_SpeedOverGround": [
+      0.0,
+      7.932733267606506
+    ],
+    "Weather_WindSpeed10M": [
+      0.0,
+      15.71
+    ],
+    "Weather_WaveHeight": [
+      0.1,
+      2.66
+    ],
+    "Weather_WavePeriod": [
+      2.65,
+      11.716666666666667
+    ],
+    "Weather_OceanCurrentVelocity": [
+      0.0,
+      1.91
+    ],
+    "Environment_SeaFloorDepth": [
+      5.9478920953321905,
+      300.125047269655
+    ],
+    "Weather_Temperature2M": [
+      23.3,
+      33.6
+    ],
+    "Weather_WindDirection10M_sin": [
+      -0.9999999998558984,
+      1.0
+    ],
+    "Weather_WindDirection10M_cos": [
+      -1.0,
+      1.0
+    ],
+    "Weather_WaveDirection_sin": [
+      -1.0,
+      1.0
+    ],
+    "Weather_WaveDirection_cos": [
+      -1.0,
+      1.0
+    ],
+    "Weather_OceanCurrentDirection_sin": [
+      -1.0,
+      1.0
+    ],
+    "Weather_OceanCurrentDirection_cos": [
+      -1.0,
+      1.0
+    ]
+  },
+  "validation_absolute_error_p90_kg_s": 0.07877084917492339,
+  "calibration": {
+    "alpha": 0.1,
+    "nominal_coverage": 0.9,
+    "global_radius": 0.07877084917492339,
+    "regime_radii": {
+      "Low speed": 0.06451034263769778,
+      "Near stationary": 0.058763205117649375,
+      "Transit": 0.21197579537497635
+    },
+    "calibration_counts": {
+      "Low speed": 100,
+      "Near stationary": 7274,
+      "Transit": 977
+    },
+    "minimum_group": 100,
+    "warning": "Coverage assumes exchangeability; chronological distribution shift can change observed coverage."
+  },
+  "test_fraction_inside_empirical_error_band": 0.8019446695219354
+}

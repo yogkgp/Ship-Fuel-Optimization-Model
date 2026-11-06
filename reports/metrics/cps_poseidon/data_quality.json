@@ -1,0 +1,60 @@
+{
+  "source_rows": 105422,
+  "removed": {
+    "exact_duplicates": 0,
+    "invalid_time_index": 0,
+    "invalid_target": 0,
+    "invalid_ground_speed": 2274
+  },
+  "invalid_inputs_nulled": {
+    "Weather_WindSpeed10M": 0,
+    "Weather_WaveHeight": 0,
+    "Weather_WavePeriod": 0,
+    "Weather_OceanCurrentVelocity": 0,
+    "Environment_SeaFloorDepth": 0,
+    "Weather_Temperature2M": 0,
+    "Ship_Bearing": 0,
+    "Weather_WindDirection10M": 0,
+    "Weather_WaveDirection": 0,
+    "Weather_OceanCurrentDirection": 0
+  },
+  "retained_rows": 103148,
+  "missing_after_cleaning": {
+    "Consumer_Total_MomentaryFuel": 0,
+    "Ship_SpeedOverGround": 0,
+    "Weather_WindSpeed10M": 154,
+    "Weather_WaveHeight": 154,
+    "Weather_WavePeriod": 154,
+    "Weather_OceanCurrentVelocity": 154,
+    "Environment_SeaFloorDepth": 0,
+    "Weather_Temperature2M": 154,
+    "Ship_Bearing": 486,
+    "Weather_WindDirection10M": 154,
+    "Weather_WaveDirection": 154,
+    "Weather_OceanCurrentDirection": 154
+  },
+  "regime_counts": {
+    "Transit": 61138,
+    "Near stationary": 40918,
+    "Low speed": 1092
+  },
+  "vessel": "CPS_Poseidon",
+  "splits": {
+    "train": {
+      "n": 61766,
+      "first_index": 0.0,
+      "last_index": 62965.0
+    },
+    "validation": {
+      "n": 20519,
+      "first_index": 63254.0,
+      "last_index": 84049.0
+    },
+    "test": {
+      "n": 20287,
+      "first_index": 84338.0,
+      "last_index": 105421.0
+    }
+  },
+  "embargo_rows": 576
+}

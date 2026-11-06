@@ -1,0 +1,59 @@
+{
+  "source_rows": 25351,
+  "removed": {
+    "exact_duplicates": 0,
+    "invalid_time_index": 4,
+    "invalid_target": 0,
+    "invalid_ground_speed": 9
+  },
+  "invalid_inputs_nulled": {
+    "Weather_WindSpeed10M": 0,
+    "Weather_WaveHeight": 0,
+    "Weather_WavePeriod": 0,
+    "Weather_OceanCurrentVelocity": 0,
+    "Environment_SeaFloorDepth": 0,
+    "Weather_Temperature2M": 0,
+    "Ship_Bearing": 0,
+    "Weather_WindDirection10M": 0,
+    "Weather_WaveDirection": 0,
+    "Weather_OceanCurrentDirection": 0
+  },
+  "retained_rows": 25338,
+  "missing_after_cleaning": {
+    "Consumer_Total_MomentaryFuel": 0,
+    "Ship_SpeedOverGround": 0,
+    "Weather_WindSpeed10M": 30,
+    "Weather_WaveHeight": 30,
+    "Weather_WavePeriod": 30,
+    "Weather_OceanCurrentVelocity": 30,
+    "Environment_SeaFloorDepth": 0,
+    "Weather_Temperature2M": 30,
+    "Ship_Bearing": 35,
+    "Weather_WindDirection10M": 30,
+    "Weather_WaveDirection": 30,
+    "Weather_OceanCurrentDirection": 30
+  },
+  "regime_counts": {
+    "Transit": 18520,
+    "Near stationary": 6177,
+    "Low speed": 641
+  },
+  "splits": {
+    "train": {
+      "n": 14914,
+      "first_index": 0.0,
+      "last_index": 14920.0
+    },
+    "validation": {
+      "n": 4779,
+      "first_index": 15209.0,
+      "last_index": 19989.0
+    },
+    "test": {
+      "n": 5069,
+      "first_index": 20278.0,
+      "last_index": 25346.0
+    }
+  },
+  "embargo_rows": 576
+}

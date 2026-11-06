@@ -1,0 +1,88 @@
+{
+  "vessel": "CPS_Poseidon",
+  "source_file": "CPS_Poseidon.parquet",
+  "source_sha256": "fcc4fff3e86de3d02b034376429e4cd98c794befb4e8f610187643d52552571b",
+  "source_rows": 105422,
+  "retained_rows": 103148,
+  "selected_model": "Cubic baseline",
+  "features": [
+    "Ship_SpeedOverGround"
+  ],
+  "speed_bounds_ms": [
+    2.0,
+    10.196288681030273
+  ],
+  "training_ranges": {
+    "Ship_SpeedOverGround": [
+      0.0,
+      10.844488525390625
+    ],
+    "Weather_WindSpeed10M": [
+      0.0,
+      16.98
+    ],
+    "Weather_WaveHeight": [
+      0.02,
+      4.48
+    ],
+    "Weather_WavePeriod": [
+      1.5,
+      16.7
+    ],
+    "Weather_OceanCurrentVelocity": [
+      0.0,
+      1.57
+    ],
+    "Environment_SeaFloorDepth": [
+      5.624309801545898,
+      335.090128290127
+    ],
+    "Weather_Temperature2M": [
+      11.5,
+      43.0
+    ],
+    "Weather_WindDirection10M_sin": [
+      -1.0,
+      1.0
+    ],
+    "Weather_WindDirection10M_cos": [
+      -1.0,
+      1.0
+    ],
+    "Weather_WaveDirection_sin": [
+      -1.0,
+      1.0
+    ],
+    "Weather_WaveDirection_cos": [
+      -1.0,
+      1.0
+    ],
+    "Weather_OceanCurrentDirection_sin": [
+      -1.0,
+      1.0
+    ],
+    "Weather_OceanCurrentDirection_cos": [
+      -1.0,
+      1.0
+    ]
+  },
+  "validation_absolute_error_p90_kg_s": 0.215870116212725,
+  "calibration": {
+    "alpha": 0.1,
+    "nominal_coverage": 0.9,
+    "global_radius": 0.215870116212725,
+    "regime_radii": {
+      "Low speed": 0.3471697775412266,
+      "Near stationary": 0.06361523098320221,
+      "Transit": 0.2671857121450796
+    },
+    "calibration_counts": {
+      "Low speed": 155,
+      "Near stationary": 8402,
+      "Transit": 11962
+    },
+    "minimum_group": 100,
+    "warning": "Coverage assumes exchangeability; chronological distribution shift can change observed coverage."
+  },
+  "test_fraction_inside_empirical_error_band": 0.9409966973924188
+}

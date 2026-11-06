@@ -1,0 +1,20 @@
+vessel: CPS_Triton
+vessels:
+  CPS_Triton: CPS_Triton.parquet
+  CPS_Poseidon: CPS_Poseidon.parquet
+  OSS_Ceto: OSS_Ceto.parquet
+seed: 42
+train_fraction: 0.60
+validation_end: 0.80
+gap_samples: 288
+minimum_comparison_speed_ms: 2.0
+speed_grid_points: 151
+rf_trees: 120
+rf_min_leaf: 12
+rf_max_depth: 16
+xgb_trees: 240
+xgb_max_depth: 4
+xgb_learning_rate: 0.04
+threads: 2
+repeated_test_starts: [0.55, 0.70, 0.85]
+repeated_test_width: 0.10
