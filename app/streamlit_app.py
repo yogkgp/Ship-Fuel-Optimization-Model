@@ -19,7 +19,7 @@ st.set_page_config(page_title="Vessel Fuel Performance Lab", page_icon="⚓", la
 st.markdown("""<style>
 :root {--navy:#102a43;--ink:#243b53;--muted:#627d98;--teal:#147d82;--paper:#f6f8fa;--line:#d9e2ec;}
 .stApp {background:var(--paper);color:var(--ink);}
-.block-container {max-width:1440px;padding-top:2.2rem;padding-bottom:4rem;}
+.block-container {max-width:1440px;padding-top:5.25rem;padding-bottom:4rem;}
 [data-testid="stSidebar"] {background:linear-gradient(180deg,#0b2338 0%,#102f49 100%);}
 [data-testid="stSidebar"] * {color:#edf4f8;}
 [data-testid="stSidebar"] [data-baseweb="select"] > div {background:#183b56;border-color:#486581;}
@@ -32,15 +32,25 @@ p,li {line-height:1.62;}
 padding:17px 18px;box-shadow:0 1px 2px rgba(16,42,67,.04);}
 [data-testid="stMetricLabel"] {color:var(--muted);font-weight:600;}
 [data-testid="stMetricValue"] {color:var(--navy);font-size:1.65rem;}
-.page-kicker {font-size:.72rem;letter-spacing:.13em;text-transform:uppercase;color:var(--teal);font-weight:750;margin-bottom:.35rem;}
+.page-kicker {font-size:.72rem;letter-spacing:.11em;text-transform:uppercase;color:var(--teal);font-weight:750;margin:0 0 .45rem;line-height:1.3;}
 .page-intro {color:var(--muted);font-size:1.02rem;max-width:850px;margin:0 0 1.6rem 0;}
-.hero {background:linear-gradient(120deg,#102a43,#174b67);color:white;padding:28px 32px;border-radius:12px;margin:8px 0 24px;box-shadow:0 8px 24px rgba(16,42,67,.10);}
-.hero h2 {color:white;margin:0 0 8px!important;font-size:1.65rem!important;}
-.hero p {color:#d9e8ef;max-width:900px;margin:0;}
+.hero {background:#fff;color:var(--ink);padding:22px 26px;border:1px solid var(--line);border-top:4px solid var(--teal);border-radius:9px;margin:8px 0 22px;box-shadow:0 1px 2px rgba(16,42,67,.04);}
+.hero h2 {color:var(--navy);margin:0 0 7px!important;font-size:1.35rem!important;}
+.hero p {color:var(--muted);max-width:940px;margin:0;}
 .note {background:#fff;border-left:4px solid var(--teal);padding:14px 17px;border-radius:0 8px 8px 0;margin:10px 0 18px;color:#334e68;}
 .small-label {font-size:.78rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;font-weight:700;}
 div[data-testid="stDataFrame"] {border:1px solid var(--line);border-radius:9px;overflow:hidden;}
 .stButton>button,.stDownloadButton>button {border-radius:7px;border:1px solid #9fb3c8;font-weight:600;}
+.workflow {display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin:10px 0 26px;}
+.workflow-step {position:relative;background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 12px;min-height:74px;}
+.workflow-step:not(:last-child):after {content:'›';position:absolute;right:-9px;top:22px;color:#829ab1;font-size:1.5rem;font-weight:500;z-index:2;}
+.workflow-num {display:block;color:var(--teal);font-size:.7rem;font-weight:800;letter-spacing:.08em;margin-bottom:5px;}
+.workflow-name {display:block;color:var(--navy);font-size:.88rem;font-weight:650;line-height:1.25;}
+@media (max-width:900px) {
+  .block-container {padding-top:4.75rem;}
+  .workflow {grid-template-columns:repeat(2,1fr);}
+  .workflow-step:after {display:none;}
+}
 hr {border-color:rgba(255,255,255,.15)!important;}
 </style>""", unsafe_allow_html=True)
 
@@ -118,15 +128,22 @@ st.markdown(f'<div class="page-kicker">Fuel performance study · {vessel_name.up
 st.title(page)
 
 if page == "Overview":
-    st.markdown('''<div class="hero"><h2>Fuel prediction grounded in recorded vessel operation</h2>
-    <p>Review the data, test a supported operating case, and compare voyage speeds under a stated arrival-time limit.</p></div>''', unsafe_allow_html=True)
+    st.markdown(f'''<div class="hero"><h2>{vessel_name} model summary</h2>
+    <p>Results on this page come from a later, held-out section of the vessel record. Use the workspace menu to inspect the data, run a prediction, or compare voyage speeds.</p></div>''', unsafe_allow_html=True)
     a, b, c, d = st.columns(4)
     a.metric("Source records", f"{metadata['source_rows']:,}")
     b.metric("Test MAE", f"{winner.MAE_kg_s:.4f} kg/s", help="Mean absolute error on the final unseen time block")
     c.metric("Test R²", f"{winner.R2:.3f}", help="Share of test-set variation explained by the selected model")
     d.metric("Candidate models", str(comparison.model.nunique()))
     st.subheader("Study workflow")
-    st.graphviz_chart('digraph {rankdir=LR; node [shape=box, style="rounded,filled", fillcolor="#e8f3f5", color="#087e8b"]; "Raw vessel data" -> "Quality checks" -> "Time-based splits" -> "Model selection" -> "Supported speed grid" -> "Voyage comparison";}')
+    st.markdown('''<div class="workflow">
+      <div class="workflow-step"><span class="workflow-num">01</span><span class="workflow-name">Source data</span></div>
+      <div class="workflow-step"><span class="workflow-num">02</span><span class="workflow-name">Quality screening</span></div>
+      <div class="workflow-step"><span class="workflow-num">03</span><span class="workflow-name">Time-based split</span></div>
+      <div class="workflow-step"><span class="workflow-num">04</span><span class="workflow-name">Model selection</span></div>
+      <div class="workflow-step"><span class="workflow-num">05</span><span class="workflow-name">Support check</span></div>
+      <div class="workflow-step"><span class="workflow-num">06</span><span class="workflow-name">Voyage comparison</span></div>
+    </div>''', unsafe_allow_html=True)
     left, right = st.columns([1.4, 1])
     with left:
         pred = read_metrics(vessel_slug, "test_predictions")
@@ -134,9 +151,9 @@ if page == "Overview":
                          labels={"actual": "Measured fuel flow (kg/s)", "predicted": "Predicted fuel flow (kg/s)"},
                          title="Measured and predicted fuel flow on the final test period"))
     with right:
-        st.subheader("How to read this dashboard")
-        st.write("The model estimates total recorded fuel flow from speed over ground and available environmental context. A cubic speed curve provides the engineering baseline.")
-        st.write(f"For {vessel_name}, the validation period selected **{bundle['name']}**. The final test period remained untouched until model selection was complete.")
+        st.subheader("Model note")
+        st.write("The response variable is total recorded fuel flow. Inputs include speed over ground and the environmental fields available for this vessel.")
+        st.write(f"**{bundle['name']}** was selected on the validation period. The final test period was opened only after that choice was fixed.")
         st.markdown('<div class="note"><b>Scope:</b> voyage figures are model-based comparisons, not measured sea-trial savings.</div>', unsafe_allow_html=True)
 
 elif page == "Data Explorer":
